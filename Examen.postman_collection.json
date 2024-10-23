@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "a0334ec1-00cf-47f1-842e-bcc867b813e6",
+		"name": "Examen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39182848"
+	},
+	"item": [
+		{
+			"name": "crearPersona",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombres\": \"Juan\",\r\n  \"apellidos\": \"Pérez\",\r\n  \"numeroDocumento\": \"12345678\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"direccion\": {\r\n    \"avenida\": \"Av. Siempre Viva\",\r\n    \"numero\": \"742\",\r\n    \"distrito\": \"Springfield\",\r\n    \"provincia\": \"Springfield\",\r\n    \"departamento\": \"Illinois\"\r\n  },\r\n  \"pedidos\": [\r\n    {\r\n      \"descripcion\": \"Pedido de libros\",\r\n      \"cantidad\": 3,\r\n      \"estado\": \"PENDIENTE\"\r\n    },\r\n    {\r\n      \"descripcion\": \"Pedido de DVDs\",\r\n      \"cantidad\": 2,\r\n      \"estado\": \"CONFIRMADO\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personas/v1/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"v1",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarTodos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombres\": \"Juan\",\r\n  \"apellidos\": \"Perez\",\r\n  \"numeroDocumento\": \"12345678\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"direccionEntity\": {\r\n    \"avenida\": \"Avenida Siempre Viva\",\r\n    \"numero\": \"742\",\r\n    \"distrito\": \"Ancón\",\r\n    \"provincia\": \"Lima\",\r\n    \"departamento\": \"Lima\"\r\n  },\r\n  \"pedidos\": [\r\n    {\r\n      \"descripcion\": \"Laptop\",\r\n      \"cantidad\": 1,\r\n      \"estado\": \"PENDIENTE\"\r\n    },\r\n    {\r\n      \"descripcion\": \"Mouse\",\r\n      \"cantidad\": 2,\r\n      \"estado\": \"CONFIRMADO\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personas/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarPersonaXnumDocumento",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombres\": \"Juan\",\r\n  \"apellidos\": \"Perez\",\r\n  \"numeroDocumento\": \"12345678\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"direccionEntity\": {\r\n    \"avenida\": \"Avenida Siempre Viva\",\r\n    \"numero\": \"742\",\r\n    \"distrito\": \"Ancón\",\r\n    \"provincia\": \"Lima\",\r\n    \"departamento\": \"Lima\"\r\n  },\r\n  \"pedidos\": [\r\n    {\r\n      \"descripcion\": \"Laptop\",\r\n      \"cantidad\": 1,\r\n      \"estado\": \"PENDIENTE\"\r\n    },\r\n    {\r\n      \"descripcion\": \"Mouse\",\r\n      \"cantidad\": 2,\r\n      \"estado\": \"CONFIRMADO\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personas/v1/12345678",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"v1",
+						"12345678"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizarPersona",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombres\": \"Juan\",\r\n    \"apellidos\": \"Pérez Veraz\",\r\n    \"numeroDocumento\": \"12345678\",\r\n    \"estado\": \"Activo\",\r\n    \"direccionEntity\": null,\r\n    \"pedidos\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personas/v1/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"v1",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminarPersona",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombres\": \"Juan\",\r\n  \"apellidos\": \"Perez\",\r\n  \"numeroDocumento\": \"12345678\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"direccionEntity\": {\r\n    \"avenida\": \"Avenida Siempre Viva\",\r\n    \"numero\": \"742\",\r\n    \"distrito\": \"Ancón\",\r\n    \"provincia\": \"Lima\",\r\n    \"departamento\": \"Lima\"\r\n  },\r\n  \"pedidos\": [\r\n    {\r\n      \"descripcion\": \"Laptop\",\r\n      \"cantidad\": 1,\r\n      \"estado\": \"PENDIENTE\"\r\n    },\r\n    {\r\n      \"descripcion\": \"Mouse\",\r\n      \"cantidad\": 2,\r\n      \"estado\": \"CONFIRMADO\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personas/v1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"v1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crearPedidos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombres\": \"Juan\",\r\n  \"apellidos\": \"Pérez\",\r\n  \"numeroDocumento\": \"12345678\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"direccion\": {\r\n    \"avenida\": \"Av. Siempre Viva\",\r\n    \"numero\": \"742\",\r\n    \"distrito\": \"Springfield\",\r\n    \"provincia\": \"Springfield\",\r\n    \"departamento\": \"Illinois\"\r\n  },\r\n  \"pedidos\": [\r\n    {\r\n      \"descripcion\": \"Pedido de libros\",\r\n      \"cantidad\": 3,\r\n      \"estado\": \"PENDIENTE\"\r\n    },\r\n    {\r\n      \"descripcion\": \"Pedido de DVDs\",\r\n      \"cantidad\": 2,\r\n      \"estado\": \"CONFIRMADO\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personas/v1/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"v1",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarTodosPedidos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombres\": \"Juan\",\r\n  \"apellidos\": \"Perez\",\r\n  \"numeroDocumento\": \"12345678\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"direccionEntity\": {\r\n    \"avenida\": \"Avenida Siempre Viva\",\r\n    \"numero\": \"742\",\r\n    \"distrito\": \"Ancón\",\r\n    \"provincia\": \"Lima\",\r\n    \"departamento\": \"Lima\"\r\n  },\r\n  \"pedidos\": [\r\n    {\r\n      \"descripcion\": \"Laptop\",\r\n      \"cantidad\": 1,\r\n      \"estado\": \"PENDIENTE\"\r\n    },\r\n    {\r\n      \"descripcion\": \"Mouse\",\r\n      \"cantidad\": 2,\r\n      \"estado\": \"CONFIRMADO\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personas/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarTodosPedidosporId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombres\": \"Juan\",\r\n  \"apellidos\": \"Perez\",\r\n  \"numeroDocumento\": \"12345678\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"direccionEntity\": {\r\n    \"avenida\": \"Avenida Siempre Viva\",\r\n    \"numero\": \"742\",\r\n    \"distrito\": \"Ancón\",\r\n    \"provincia\": \"Lima\",\r\n    \"departamento\": \"Lima\"\r\n  },\r\n  \"pedidos\": [\r\n    {\r\n      \"descripcion\": \"Laptop\",\r\n      \"cantidad\": 1,\r\n      \"estado\": \"PENDIENTE\"\r\n    },\r\n    {\r\n      \"descripcion\": \"Mouse\",\r\n      \"cantidad\": 2,\r\n      \"estado\": \"CONFIRMADO\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pedidos/v1/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidos",
+						"v1",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizarPedido",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descripcion\": \"Pedido actualizado\",\r\n    \"cantidad\": 2,\r\n    \"estado\": \"Completado\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pedidos/v1/3/persona/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidos",
+						"v1",
+						"3",
+						"persona",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminarPedido",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombres\": \"Juan\",\r\n  \"apellidos\": \"Pérez\",\r\n  \"numeroDocumento\": \"12345678\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"direccion\": {\r\n    \"avenida\": \"Av. Siempre Viva\",\r\n    \"numero\": \"742\",\r\n    \"distrito\": \"Springfield\",\r\n    \"provincia\": \"Springfield\",\r\n    \"departamento\": \"Illinois\"\r\n  },\r\n  \"pedidos\": [\r\n    {\r\n      \"descripcion\": \"Pedido de libros\",\r\n      \"cantidad\": 3,\r\n      \"estado\": \"PENDIENTE\"\r\n    },\r\n    {\r\n      \"descripcion\": \"Pedido de DVDs\",\r\n      \"cantidad\": 2,\r\n      \"estado\": \"CONFIRMADO\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pedidos/v1/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidos",
+						"v1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
